@@ -55,7 +55,12 @@ export const Settings: FC<Props> = ({ elRef }) => {
   const { state, setState } = store;
 
   return (
-    <div className={styles.settings}>
+    <div
+      className={classnames(styles.settings, {
+        [styles["settings-open"]]: open,
+      })}
+    >
+      {/* <div className={styles["arrow-container"]}> */}
       <button className={styles["arrow-button"]} onClick={() => setOpen(!open)}>
         <Arrow
           className={classnames(styles.arrow, {
@@ -63,6 +68,7 @@ export const Settings: FC<Props> = ({ elRef }) => {
           })}
         />
       </button>
+      {/* </div> */}
       {open && (
         <>
           <div>

@@ -9,8 +9,8 @@
   .container {
     flex-direction: column;
   }
-}
 
-.post-container {
-  margin: -100%;
+  .post-container {
+    margin: -100%;
+  }
 }
