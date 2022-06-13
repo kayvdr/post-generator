@@ -1,0 +1,15 @@
+server {
+    listen      8080 ${NGINX_PROTOCOL};
+    root        /usr/share/nginx/html;
+
+    # security
+    include     /etc/nginx/nginxconfig.io/security.conf;
+
+    # index.html fallback
+    location / {
+        try_files $uri $uri/ /index.html;
+    }
+
+    # additional config
+    include /etc/nginx/nginxconfig.io/general.conf;
+}

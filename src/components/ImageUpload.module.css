@@ -1,0 +1,20 @@
+.image-options {
+  display: flex;
+}
+
+.label {
+  margin-bottom: 0.25em;
+  display: block;
+  font-size: 0.75em;
+  color: var(--text);
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.upload-container {
+  margin-bottom: 1em;
+}
+
+.upload {
+  font-size: 0.8em;
+}

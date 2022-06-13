@@ -1,0 +1,64 @@
+.settings {
+  width: 25em;
+  min-width: 25em;
+  background-color: var(--grey-light);
+  color: var(--grey);
+  font-family: "Roboto", sans-serif;
+  padding: 2em;
+  max-height: 100%;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+@media (max-width: 768px) {
+  .settings {
+    position: absolute;
+    bottom: 0;
+    z-index: 5;
+    width: 100%;
+    padding: 1em;
+    margin-top: 1em;
+    max-height: 100vh;
+    min-width: 0;
+  }
+}
+
+.arrow-button {
+  border: 0;
+  background-color: transparent;
+  transform: rotate(-90deg);
+  margin: 0 auto;
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .arrow-button {
+    display: block;
+  }
+}
+
+.arrow {
+  width: 1em;
+}
+
+.arrow-revert {
+  transform: rotate(180deg);
+}
+
+.arrow path {
+  fill: var(--grey);
+}
+
+.download-button {
+  width: 100%;
+  background-color: var(--green);
+  padding: 0.75em 1em;
+  color: var(--white);
+  border: 0;
+  border-radius: 0.35em;
+  font-size: inherit;
+  cursor: pointer;
+  margin-top: 1em;
+}

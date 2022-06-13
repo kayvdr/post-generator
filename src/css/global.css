@@ -1,0 +1,49 @@
+:root {
+  --green: #00c896;
+  --grey: #393939;
+  --grey-dark: #1e1e1e;
+  --grey-light: #dcdcdc;
+  --white: #ffffff;
+}
+
+@font-face {
+  font-family: "Anton";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local(""), url("../fonts/anton-regular.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local(""), url("../fonts/roboto-regular.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Roboto";
+  font-style: bold;
+  font-weight: 700;
+  font-display: swap;
+  src: local(""), url("../fonts/roboto-bold.woff2") format("woff2");
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  height: 100vh;
+  overflow: hidden;
+}
+
+body {
+  font-family: "Anton", sans-serif;
+  color: var(--white);
+  font-size: 18px;
+  margin: 0;
+}

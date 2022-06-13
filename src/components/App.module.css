@@ -1,0 +1,16 @@
+.container {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  position: relative;
+}
+
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+  }
+}
+
+.post-container {
+  margin: -100%;
+}

@@ -1,0 +1,38 @@
+.content {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5em;
+  z-index: 1;
+  margin-top: 3em;
+}
+
+.box {
+  background-color: var(--grey);
+  border-radius: 1em;
+  text-align: center;
+  padding: 1em;
+}
+
+.box-title {
+  font-size: 1.5em;
+  margin: 0;
+  letter-spacing: 2px;
+}
+
+.box-subtitle {
+  font-size: 0.8em;
+  font-family: "Roboto", sans-serif;
+  margin: 0;
+}
+
+.box-value {
+  font-size: 3em;
+  margin-bottom: 0;
+  margin-top: 0.1em;
+}
+
+.box-value span {
+  font-size: 1.25em;
+  color: var(--green);
+}
