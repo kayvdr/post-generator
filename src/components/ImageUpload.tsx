@@ -1,4 +1,4 @@
-import { ChangeEvent, FC } from "react";
+import React, { ChangeEvent, FC } from "react";
 import { State } from "../types/types";
 import styles from "./ImageUpload.module.css";
 import { NumberInput } from "./NumberInput";

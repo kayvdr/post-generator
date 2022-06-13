@@ -1,5 +1,5 @@
 import classnames from "classnames";
-import { FC, Ref } from "react";
+import React, { FC, Ref } from "react";
 import { State } from "../types/types";
 import styles from "./Cover.module.css";
 import { Arrow } from "./dist/svg";

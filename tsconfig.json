@@ -2,7 +2,7 @@
   "compilerOptions": {
     /* Language and Environment */
     "target": "es2021",
-    "jsx": "react-jsx",
+    "jsx": "react",
 
     /* Modules */
     "module": "commonjs",
@@ -13,7 +13,7 @@
     "sourceMap": true,
 
     /* Interop Constraints */
-    "esModuleInterop": false,
+    "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
 
     /* Type Checking */

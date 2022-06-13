@@ -1,4 +1,4 @@
-import { FC } from "react";
+import React, { FC } from "react";
 import Bookmark from "./dist/svg/Bookmark";
 import Heart from "./dist/svg/Heart";
 import Send from "./dist/svg/Send";

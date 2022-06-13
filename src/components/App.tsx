@@ -1,4 +1,4 @@
-import { createContext, FC, useRef, useState } from "react";
+import React, { createContext, FC, useRef, useState } from "react";
 import { State } from "../types/types";
 import styles from "./App.module.css";
 import { Post } from "./Post";

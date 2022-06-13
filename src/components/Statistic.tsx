@@ -1,4 +1,4 @@
-import { FC, Ref } from "react";
+import React, { FC, Ref } from "react";
 import { State } from "../types/types";
 import { Layout } from "./Layout";
 import styles from "./Statistic.module.css";

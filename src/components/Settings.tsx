@@ -1,6 +1,6 @@
 import classnames from "classnames";
 import html2canvas from "html2canvas";
-import { FC, RefObject, useContext, useEffect, useState } from "react";
+import React, { FC, RefObject, useContext, useEffect, useState } from "react";
 import { StoreContext } from "./App";
 import { Checkbox } from "./Checkbox";
 import { Arrow } from "./dist/svg";
