@@ -36,14 +36,18 @@ const downloadImage = (blob: string, fileName: string) => {
   fakeLink.remove();
 };
 
+let prevHeight = document.documentElement.clientHeight;
+
 export const Settings: FC<Props> = ({ elRef }) => {
   const store = useContext(StoreContext);
   const [open, setOpen] = useState(false);
 
   useEffect(() => {
     const updateSize = () => {
+      if (prevHeight !== document.documentElement.clientHeight) return;
       const mobile = document.documentElement.clientWidth >= 768;
       setOpen(mobile);
+      prevHeight = document.documentElement.clientHeight;
     };
     window.addEventListener("resize", updateSize);
     updateSize();
