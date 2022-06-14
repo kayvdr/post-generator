@@ -5,8 +5,9 @@
   "main": "src/index.tsx",
   "scripts": {
     "start": "webpack -w --mode development",
-    "build": "webpack --mode production",
-    "build:svg": "svgr --no-prettier --no-svgo --typescript --memo --out-dir src/components/dist/svg src/svg"
+    "build:svg": "svgr --no-prettier --no-svgo --typescript --memo --out-dir src/components/dist/svg src/svg",
+    "build:webpack": "webpack --mode production",
+    "build": "npm run build:svg && npm run build:webpack"
   },
   "repository": {
     "type": "git",
