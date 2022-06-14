@@ -1,3 +1,4 @@
+import CopyPlugin from "copy-webpack-plugin";
 import HtmlWebpackPlugin from "html-webpack-plugin";
 import * as path from "path";
 import { Configuration } from "webpack";
@@ -54,6 +55,9 @@ const configuration: Configuration = {
       template: "src/assets/index.html",
       hash: true,
       publicPath: "/",
+    }),
+    new CopyPlugin({
+      patterns: ["src/img"],
     }),
   ],
 };
