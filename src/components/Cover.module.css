@@ -6,10 +6,9 @@
   min-height: 1350px;
   max-width: 1080px;
   max-height: 1350px;
-  padding: 9em 4em;
+  padding: 8em 4em;
   position: relative;
   overflow: hidden;
-  transform: scale(0.5);
   font-size: 1.5em;
 }
 
@@ -90,7 +89,7 @@
 
 .img-container {
   text-align: right;
-  margin-top: -8em;
+  margin-top: -2em;
   position: relative;
   z-index: 5;
   margin-left: auto;
@@ -107,7 +106,7 @@
   justify-content: space-between;
   position: absolute;
   width: calc(100% - 8em);
-  bottom: 2em;
+  bottom: 1.25em;
 }
 
 .code-container {
@@ -132,4 +131,8 @@
 
 .text-big {
   font-size: 1.5em;
+}
+
+.content-img {
+  width: 100%;
 }

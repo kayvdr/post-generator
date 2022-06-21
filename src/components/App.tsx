@@ -12,11 +12,13 @@ export const StoreContext = createContext<{
 const App: FC = () => {
   const exportRef = useRef<HTMLDivElement>(null);
   const [state, setState] = useState<State>({
+    scale: 0.5,
     template: "Cover",
     title: undefined,
     titleGreen: undefined,
     subtitle: undefined,
     description: undefined,
+    descriptionImage: undefined,
     codeHeader: undefined,
     codeSnippet: undefined,
     codeSnippetCenter: false,
@@ -32,7 +34,7 @@ const App: FC = () => {
   return (
     <StoreContext.Provider value={{ state, setState }}>
       <div className={styles.container}>
-        <Settings elRef={exportRef} />
+        <Settings elRef={exportRef} state={state} setState={setState} />
         <div className={styles["post-container"]}>
           <Post elRef={exportRef} state={state} />
         </div>

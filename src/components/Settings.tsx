@@ -1,6 +1,7 @@
 import classnames from "classnames";
 import html2canvas from "html2canvas";
 import React, { FC, RefObject, useContext, useEffect, useState } from "react";
+import { State } from "../types/types";
 import { StoreContext } from "./App";
 import { Checkbox } from "./Checkbox";
 import { Arrow } from "./dist/svg";
@@ -12,13 +13,22 @@ import { TextInput } from "./TextInput";
 
 interface Props {
   elRef: RefObject<HTMLDivElement>;
+  state: State;
+  setState: (value: State) => void;
 }
 
 const exportAsImage = async (
   el: HTMLDivElement | null,
   imageFileName: string
 ) => {
-  const canvas = el && (await html2canvas(el));
+  const canvas =
+    el &&
+    (await html2canvas(el, {
+      width: 1080,
+      height: 1350,
+      scale: 1,
+    }));
+
   const image = canvas?.toDataURL("image/png", 1.0);
   image && downloadImage(image, imageFileName);
 };
@@ -99,7 +109,7 @@ export const Settings: FC<Props> = ({ elRef }) => {
                   value={state.subtitle}
                   setValue={(value) => setState({ ...state, subtitle: value })}
                 />
-                <ImageUpload state={state} setState={setState} />
+                <ImageUpload state={state} item="image" setState={setState} />
               </>
             )}
             {state.template === "Snippet" && (
@@ -157,6 +167,11 @@ export const Settings: FC<Props> = ({ elRef }) => {
                     setState({ ...state, description: value })
                   }
                 />
+                <ImageUpload
+                  state={state}
+                  item="descriptionImage"
+                  setState={setState}
+                />
               </>
             )}
             {state.template === "Statistic" && (
@@ -213,10 +228,30 @@ export const Settings: FC<Props> = ({ elRef }) => {
               value={state.showArrow}
               setValue={(value) => setState({ ...state, showArrow: value })}
             />
+            <div>
+              <input
+                type="range"
+                min="0"
+                max="1"
+                value={state.scale}
+                onChange={(e) => {
+                  setState({ ...state, scale: +e.target.value });
+                }}
+                step="0.02"
+              />
+            </div>
           </div>
           <button
             className={styles["download-button"]}
-            onClick={() => exportAsImage(elRef.current, state.template)}
+            onClick={() => {
+              setState({ ...state, scale: 1 });
+              setTimeout(() => {
+                exportAsImage(elRef.current, state.template);
+              }, 500);
+              setTimeout(() => {
+                setState({ ...state, scale: 0.5 });
+              }, 1000);
+            }}
           >
             Download Post
           </button>

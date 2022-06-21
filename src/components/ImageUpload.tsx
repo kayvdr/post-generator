@@ -5,10 +5,11 @@ import { NumberInput } from "./NumberInput";
 
 interface Props {
   state: State;
+  item: keyof State;
   setState: (value: State) => void;
 }
 
-export const ImageUpload: FC<Props> = ({ state, setState }) => {
+export const ImageUpload: FC<Props> = ({ state, item, setState }) => {
   const uploadImage = (e: ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0];
 
@@ -18,7 +19,7 @@ export const ImageUpload: FC<Props> = ({ state, setState }) => {
 
     reader.onloadend = () => {
       typeof reader.result === "string" &&
-        setState({ ...state, image: reader.result });
+        setState({ ...state, [item]: reader.result });
     };
 
     reader.readAsDataURL(file);
@@ -32,7 +33,7 @@ export const ImageUpload: FC<Props> = ({ state, setState }) => {
       <div className={styles["upload-container"]} id="upload">
         <input className={styles.upload} type="file" onChange={uploadImage} />
       </div>
-      {state.image && (
+      {state[item] && state[item] === "image" && (
         <div className={styles["image-options"]}>
           <NumberInput
             title="Width"

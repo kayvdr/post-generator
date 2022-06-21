@@ -19,6 +19,7 @@ export const Layout: FC<Props> = ({ elRef, state, children }) => (
     className={classnames(styles.post, {
       [styles["code-snippet-center"]]: state.codeSnippetCenter,
     })}
+    style={{ transform: `scale(${state.scale})` }}
   >
     {state.showArrow && (
       <div className={styles["triangle-top"]}>

@@ -6,11 +6,13 @@ interface Statistic {
 }
 
 export interface State {
+  scale: number;
   template: string;
   title?: string | undefined;
   titleGreen?: string | undefined;
   subtitle?: string | undefined;
   description?: string | undefined;
+  descriptionImage?: string | undefined;
   codeHeader?: string | undefined;
   codeSnippet?: string | undefined;
   codeSnippetCenter: boolean;
