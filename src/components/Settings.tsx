@@ -25,7 +25,7 @@ const exportAsImage = async (
     el &&
     (await html2canvas(el, {
       width: 1080,
-      height: 1350,
+      height: imageFileName === "Quiz" ? 1920 : 1350,
       scale: 1,
     }));
 
@@ -214,6 +214,17 @@ export const Settings: FC<Props> = ({ elRef }) => {
                       ...state,
                       statistic: { ...state.statistic, downloads: value },
                     })
+                  }
+                />
+              </>
+            )}
+            {state.template === "Quiz" && (
+              <>
+                <EditorInput
+                  title="Code"
+                  value={state.codeSnippet}
+                  setValue={(value) =>
+                    setState({ ...state, codeSnippet: value })
                   }
                 />
               </>

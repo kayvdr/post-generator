@@ -6,7 +6,14 @@ interface Props {
   setValue: (value: string) => void;
 }
 
-export const options = ["Cover", "Snippet", "Description", "Statistic"];
+export const options = [
+  "Cover",
+  "Snippet",
+  "Description",
+  "Statistic",
+  "Quiz",
+  "BackCover",
+];
 
 export const TemplateSelect: FC<Props> = ({ value, setValue }) => (
   <div className={styles["input-container"]}>
