@@ -12,7 +12,7 @@ export const StoreContext = createContext<{
 const App: FC = () => {
   const exportRef = useRef<HTMLDivElement>(null);
   const [state, setState] = useState<State>({
-    scale: 0.5,
+    scale: 0.3,
     template: "Cover",
     title: undefined,
     titleGreen: undefined,
