@@ -7,6 +7,7 @@ interface Statistic {
 
 export interface State {
   scale: number;
+  size: boolean;
   template: string;
   title?: string | undefined;
   titleGreen?: string | undefined;

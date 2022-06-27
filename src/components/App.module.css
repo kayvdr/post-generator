@@ -14,4 +14,8 @@
     margin: -100%;
     height: 100%;
   }
+
+  .post-full-container {
+    margin: -175%;
+  }
 }

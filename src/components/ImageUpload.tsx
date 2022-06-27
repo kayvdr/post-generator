@@ -33,7 +33,7 @@ export const ImageUpload: FC<Props> = ({ state, item, setState }) => {
       <div className={styles["upload-container"]} id="upload">
         <input className={styles.upload} type="file" onChange={uploadImage} />
       </div>
-      {state[item] && state[item] === "image" && (
+      {state[item] && item === "image" && (
         <div className={styles["image-options"]}>
           <NumberInput
             title="Width"

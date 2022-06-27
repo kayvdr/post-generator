@@ -18,7 +18,7 @@ export const Layout: FC<Props> = ({ elRef, state, children }) => (
     ref={elRef}
     className={classnames(styles.post, {
       [styles["code-snippet-center"]]: state.codeSnippetCenter,
-      [styles["post-full"]]: state.template === "Quiz",
+      [styles["post-full"]]: state.size,
     })}
     style={{ transform: `scale(${state.scale})` }}
   >

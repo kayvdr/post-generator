@@ -17,20 +17,17 @@ interface Props {
   setState: (value: State) => void;
 }
 
-const exportAsImage = async (
-  el: HTMLDivElement | null,
-  imageFileName: string
-) => {
+const exportAsImage = async (el: HTMLDivElement | null, state: State) => {
   const canvas =
     el &&
     (await html2canvas(el, {
       width: 1080,
-      height: imageFileName === "Quiz" ? 1920 : 1350,
+      height: state.size ? 1920 : 1350,
       scale: 1,
     }));
 
   const image = canvas?.toDataURL("image/png", 1.0);
-  image && downloadImage(image, imageFileName);
+  image && downloadImage(image, state.template);
 };
 
 const downloadImage = (blob: string, fileName: string) => {
@@ -74,7 +71,6 @@ export const Settings: FC<Props> = ({ elRef }) => {
         [styles["settings-open"]]: open,
       })}
     >
-      {/* <div className={styles["arrow-container"]}> */}
       <button className={styles["arrow-button"]} onClick={() => setOpen(!open)}>
         <Arrow
           className={classnames(styles.arrow, {
@@ -82,7 +78,6 @@ export const Settings: FC<Props> = ({ elRef }) => {
           })}
         />
       </button>
-      {/* </div> */}
       {open && (
         <>
           <div>
@@ -239,6 +234,12 @@ export const Settings: FC<Props> = ({ elRef }) => {
               value={state.showArrow}
               setValue={(value) => setState({ ...state, showArrow: value })}
             />
+            <p>General Configuration</p>
+            <Checkbox
+              label="Size (1080x1920)"
+              value={state.size}
+              setValue={(value) => setState({ ...state, size: value })}
+            />
             <div>
               <input
                 type="range"
@@ -257,7 +258,7 @@ export const Settings: FC<Props> = ({ elRef }) => {
             onClick={() => {
               setState({ ...state, scale: 1 });
               setTimeout(() => {
-                exportAsImage(elRef.current, state.template);
+                exportAsImage(elRef.current, state);
               }, 500);
               setTimeout(() => {
                 setState({ ...state, scale: 0.5 });

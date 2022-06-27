@@ -1,4 +1,5 @@
-import React, { createContext, FC, useRef, useState } from "react";
+import classnames from "classnames";
+import React, { createContext, FC, useEffect, useRef, useState } from "react";
 import { State } from "../types/types";
 import styles from "./App.module.css";
 import { Post } from "./Post";
@@ -13,6 +14,7 @@ const App: FC = () => {
   const exportRef = useRef<HTMLDivElement>(null);
   const [state, setState] = useState<State>({
     scale: 0.3,
+    size: false,
     template: "Cover",
     title: undefined,
     titleGreen: undefined,
@@ -31,11 +33,21 @@ const App: FC = () => {
     statistic: undefined,
   });
 
+  useEffect(() => {
+    state.template === "Quiz"
+      ? setState({ ...state, size: true })
+      : setState({ ...state, size: false });
+  }, [state.template]);
+
   return (
     <StoreContext.Provider value={{ state, setState }}>
       <div className={styles.container}>
         <Settings elRef={exportRef} state={state} setState={setState} />
-        <div className={styles["post-container"]}>
+        <div
+          className={classnames(styles["post-container"], {
+            [styles["post-full-container"]]: state.size,
+          })}
+        >
           <Post elRef={exportRef} state={state} />
         </div>
       </div>
