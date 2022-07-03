@@ -16,7 +16,7 @@
   height: 1920px;
   min-height: 1920px;
   max-height: 1920px;
-  padding: 14em 4em;
+  padding: 10em 4em;
 }
 
 .code-snippet-center {
@@ -61,6 +61,16 @@
   right: 0;
   width: 11em;
   height: 11em;
+}
+
+.triangle-bottom {
+  fill: var(--grey);
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 4em;
+  height: 4em;
+  transform: rotate(180deg);
 }
 
 .arrow {

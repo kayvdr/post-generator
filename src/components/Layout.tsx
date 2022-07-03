@@ -22,14 +22,14 @@ export const Layout: FC<Props> = ({ elRef, state, children }) => (
     })}
     style={{ transform: `scale(${state.scale})` }}
   >
-    {state.showArrow && (
-      <div className={styles["triangle-top"]}>
-        <Triangle />
+    <div className={styles["triangle-top"]}>
+      <Triangle />
+      {state.showArrow && (
         <div className={styles.arrow}>
           <Arrow />
         </div>
-      </div>
-    )}
+      )}
+    </div>
     {children}
     {state.showBar && (
       <div className={styles.infos}>
@@ -37,5 +37,8 @@ export const Layout: FC<Props> = ({ elRef, state, children }) => (
         <Profile />
       </div>
     )}
+    <div className={styles["triangle-bottom"]}>
+      <Triangle />
+    </div>
   </div>
 );
