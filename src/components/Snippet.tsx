@@ -14,7 +14,7 @@ export const Snippet: FC<Props> = ({ elRef, state }) => (
       <h1 className={styles.title}>
         {state.titleGreen && <span>{state.titleGreen}</span>}
       </h1>
-      {state.description && <p>{state.description}</p>}
+      {state.description && <p className={styles.text}>{state.description}</p>}
       {state.codeSnippet && (
         <div className={styles["code-container"]}>
           {state.codeHeader && (
