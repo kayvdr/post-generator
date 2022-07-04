@@ -19,9 +19,13 @@ export const Description: FC<Props> = ({ elRef, state }) => (
         )}
       </h1>
       {state.description ? (
-        <p className={styles["text-big"]}>{state.description}</p>
+        <div
+          dangerouslySetInnerHTML={{
+            __html: state.description.replace(/\n/g, "<br />"),
+          }}
+        ></div>
       ) : (
-        <p className={styles["text-big"]}>Lorem ipsum dolor sit amet</p>
+        <p>Lorem ipsum dolor sit amet</p>
       )}
       {state.descriptionImage && (
         <img src={state.descriptionImage} className={styles["content-img"]} />

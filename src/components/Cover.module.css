@@ -142,14 +142,19 @@
 .code-header {
   margin: 0.5em;
   background-color: var(--grey-dark);
-  padding: 0.5em 1em;
+  padding: 0.75em 1em;
   position: relative;
   top: 0.5em;
   border-radius: 0.5em;
 }
 
 .code-content {
-  padding: 1em 3em;
+  padding: 0.5em 1.5em;
+}
+
+.code-content pre {
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
 }
 
 .text-big {
