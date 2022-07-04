@@ -20,6 +20,7 @@ export const Description: FC<Props> = ({ elRef, state }) => (
       </h1>
       {state.description ? (
         <div
+          className={styles.text}
           dangerouslySetInnerHTML={{
             __html: state.description.replace(/\n/g, "<br />"),
           }}
