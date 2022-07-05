@@ -158,8 +158,12 @@
   margin-bottom: 0.5em;
 }
 
+code {
+  font-size: 0.9em;
+}
+
 .text {
-  font-size: 1.05;
+  font-size: 1.05em;
   line-height: 1.3;
 }
 
