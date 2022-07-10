@@ -15,7 +15,7 @@ export const Cover: FC<Props> = ({ elRef, state }) => (
       {state.subtitle && (
         <p className={styles["sub-title"]}>{state.subtitle}</p>
       )}
-      <h1 className={styles.title}>
+      <h1 className={styles["title-big"]}>
         {state.title || state.titleGreen ? (
           <>
             <span>{state.titleGreen}</span>

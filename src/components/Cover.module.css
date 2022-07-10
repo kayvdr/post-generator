@@ -89,14 +89,23 @@
   margin-bottom: 3em;
 }
 
-.title {
-  font-size: 4em;
+.title,
+.title-big {
   margin: 0 0 0.25em;
   font-weight: 400;
   font-family: "Anton", sans-serif;
 }
 
-.title span {
+.title {
+  font-size: 4em;
+}
+
+.title-big {
+  font-size: 5em;
+}
+
+.title span,
+.title-big span {
   color: var(--green);
 }
 
@@ -108,7 +117,7 @@
 
 .img-container {
   text-align: right;
-  margin-top: -2em;
+  margin-top: -6em;
   position: relative;
   z-index: 5;
   margin-left: auto;
@@ -172,7 +181,8 @@ code {
 }
 
 .content-img {
-  width: 100%;
+  position: relative;
+  z-index: 1;
 }
 
 .backcover-img {
@@ -182,4 +192,14 @@ code {
   margin-top: 3em;
   position: relative;
   z-index: 1;
+}
+
+.list-item {
+  font-size: 1.8em;
+  line-height: 0.5;
+  margin-right: 0.5em;
+  margin-bottom: 0.5em;
+  display: inline-block;
+  position: relative;
+  top: 0.1em;
 }
