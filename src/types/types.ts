@@ -19,8 +19,8 @@ export interface State {
   codeSnippetCenter: boolean;
   image?: string | undefined;
   imageWidth?: number;
-  imagePositionTop?: number;
-  imagePositionLeft?: number;
+  imagePositionTop?: number | undefined;
+  imagePositionLeft?: number | undefined;
   showBar: boolean;
   showArrow: boolean;
   statistic?: Statistic | undefined;
