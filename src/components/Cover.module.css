@@ -219,6 +219,8 @@ code {
   fill: white;
   position: absolute;
   left: 1em;
+  top: 50%;
+  transform: translateY(-50%);
 }
 
 .link-text {
