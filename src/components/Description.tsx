@@ -1,3 +1,4 @@
+import classnames from "classnames";
 import React, { FC, Ref } from "react";
 import { State } from "../types/types";
 import styles from "./Cover.module.css";
@@ -26,7 +27,7 @@ const getDescription = (description: string) => {
 
 export const Description: FC<Props> = ({ elRef, state }) => (
   <Layout elRef={elRef} state={state}>
-    <div className={styles.content}>
+    <div className={classnames(styles.content, styles["description-content"])}>
       <h1 className={styles.title}>
         {state.titleGreen ? (
           <span>{state.titleGreen}</span>

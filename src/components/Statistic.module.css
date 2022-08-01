@@ -7,6 +7,10 @@
   margin-top: 3em;
 }
 
+.description-content {
+  margin-top: 5em;
+}
+
 .box {
   background-color: var(--grey);
   border-radius: 1em;
@@ -30,6 +34,7 @@
   font-size: 3em;
   margin-bottom: 0;
   margin-top: 0.1em;
+  font-weight: 600;
 }
 
 .box-value span {

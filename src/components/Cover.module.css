@@ -183,6 +183,7 @@ code {
 .content-img {
   position: relative;
   z-index: 1;
+  border-radius: 0.5em;
 }
 
 .backcover-img {
