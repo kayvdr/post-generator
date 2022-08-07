@@ -135,6 +135,7 @@
   position: absolute;
   width: calc(100% - 8em);
   bottom: 1.25em;
+  z-index: 5;
 }
 
 .code-container {
