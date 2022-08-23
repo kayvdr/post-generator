@@ -24,6 +24,7 @@ const App: FC = () => {
     codeHeader: undefined,
     codeSnippet: undefined,
     codeSnippetCenter: false,
+    link: undefined,
     image: undefined,
     imageWidth: 750,
     imagePositionTop: undefined,

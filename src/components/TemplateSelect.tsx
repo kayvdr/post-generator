@@ -11,6 +11,7 @@ export const options = [
   "Snippet",
   "Description",
   "Statistic",
+  "Link",
   "Quiz",
   "BackCover",
 ];

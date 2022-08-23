@@ -3,6 +3,7 @@ import { State } from "../types/types";
 import { BackCover } from "./BackCover";
 import { Cover } from "./Cover";
 import { Description } from "./Description";
+import { Link } from "./Link";
 import { Quiz } from "./Quiz";
 import { Snippet } from "./Snippet";
 import { Statistic } from "./Statistic";
@@ -22,6 +23,8 @@ export const Post: FC<Props> = ({ elRef, state }) => {
       return <Description elRef={elRef} state={state} />;
     case "Statistic":
       return <Statistic elRef={elRef} state={state} />;
+    case "Link":
+      return <Link elRef={elRef} state={state} />;
     case "Quiz":
       return <Quiz elRef={elRef} state={state} />;
     case "BackCover":

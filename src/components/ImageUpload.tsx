@@ -7,9 +7,15 @@ interface Props {
   state: State;
   item: keyof State;
   setState: (value: State) => void;
+  options?: boolean;
 }
 
-export const ImageUpload: FC<Props> = ({ state, item, setState }) => {
+export const ImageUpload: FC<Props> = ({
+  state,
+  item,
+  setState,
+  options = true,
+}) => {
   const uploadImage = (e: ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0];
 
@@ -33,7 +39,7 @@ export const ImageUpload: FC<Props> = ({ state, item, setState }) => {
       <div className={styles["upload-container"]} id="upload">
         <input className={styles.upload} type="file" onChange={uploadImage} />
       </div>
-      {state[item] && (
+      {state[item] && options && (
         <div className={styles["image-options"]}>
           <NumberInput
             title="Width"

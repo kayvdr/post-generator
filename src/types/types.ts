@@ -17,6 +17,7 @@ export interface State {
   codeHeader?: string | undefined;
   codeSnippet?: string | undefined;
   codeSnippetCenter: boolean;
+  link: string | undefined;
   image?: string | undefined;
   imageWidth?: number;
   imagePositionTop?: number | undefined;

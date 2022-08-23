@@ -213,6 +213,28 @@ export const Settings: FC<Props> = ({ elRef }) => {
                 />
               </>
             )}
+            {state.template === "Link" && (
+              <>
+                <TextInput
+                  title="Title Green"
+                  value={state.titleGreen}
+                  setValue={(value) =>
+                    setState({ ...state, titleGreen: value })
+                  }
+                />
+                <TextInput
+                  title="Link"
+                  value={state.link}
+                  setValue={(value) => setState({ ...state, link: value })}
+                />
+                <ImageUpload
+                  state={state}
+                  item="descriptionImage"
+                  setState={setState}
+                  options={false}
+                />
+              </>
+            )}
             {state.template === "Quiz" && (
               <>
                 <EditorInput
