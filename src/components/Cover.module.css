@@ -16,9 +16,7 @@
   height: 1920px;
   min-height: 1920px;
   max-height: 1920px;
-  padding: 10em 4em;
-  display: flex;
-  align-items: center;
+  padding: 15em 4em;
 }
 
 .code-snippet-center {
@@ -86,11 +84,6 @@
   position: relative;
   width: 100%;
 }
-
-.post-full .content {
-  margin-bottom: 2em;
-}
-
 .code-snippet-center .content {
   margin-bottom: 3em;
 }
