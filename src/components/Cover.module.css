@@ -17,6 +17,8 @@
   min-height: 1920px;
   max-height: 1920px;
   padding: 10em 4em;
+  display: flex;
+  align-items: center;
 }
 
 .code-snippet-center {
@@ -83,6 +85,10 @@
 .content {
   position: relative;
   width: 100%;
+}
+
+.post-full .content {
+  margin-bottom: 2em;
 }
 
 .code-snippet-center .content {
