@@ -273,7 +273,11 @@ export const Settings: FC<Props> = ({ elRef }) => {
           <button
             className={styles["download-button"]}
             onClick={() => {
-              setState({ ...state, scale: 1 });
+              setState({
+                ...state,
+                position: { initX: 0, initY: 0, x: 0, y: 0 },
+                scale: 1,
+              });
               setTimeout(() => {
                 exportAsImage(elRef.current, state);
               }, 500);
