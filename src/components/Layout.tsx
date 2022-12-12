@@ -1,6 +1,7 @@
 import classnames from "classnames";
-import React, { FC, Ref } from "react";
-import { State } from "../types/types";
+import React, { FC, Ref, useContext } from "react";
+import { State, StateContext } from "../types/types";
+import { StoreContext } from "./App";
 import styles from "./Cover.module.css";
 import { Arrow } from "./dist/svg";
 import Triangle from "./dist/svg/Triangle";
@@ -13,32 +14,40 @@ interface Props {
   children: JSX.Element;
 }
 
-export const Layout: FC<Props> = ({ elRef, state, children }) => (
-  <div
-    ref={elRef}
-    className={classnames(styles.post, {
-      [styles["code-snippet-center"]]: state.codeSnippetCenter,
-      [styles["post-full"]]: state.size,
-    })}
-    style={{ transform: `scale(${state.scale})` }}
-  >
-    <div className={styles["triangle-top"]}>
-      <Triangle />
-      {state.showArrow && (
-        <div className={styles.arrow}>
-          <Arrow />
-        </div>
-      )}
-    </div>
-    {children}
-    {state.showBar && (
+export const Layout: FC<Props> = ({ elRef, children }) => {
+  const cxt = useContext<StateContext | null>(StoreContext);
+
+  if (!cxt) return null;
+
+  const { state } = cxt;
+
+  return (
+    <div
+      ref={elRef}
+      className={classnames(styles.post, {
+        [styles["code-snippet-center"]]: state.codeSnippetCenter,
+        [styles["post-full"]]: state.size,
+      })}
+      style={{
+        transform: `matrix(1, 0, 0, 1, ${state.position.x}, ${state.position.y}) scale(${state.scale})`,
+      }}
+    >
+      <div className={styles["triangle-top"]}>
+        <Triangle />
+        {state.showArrow && (
+          <div className={styles.arrow}>
+            <Arrow />
+          </div>
+        )}
+      </div>
+      {children}
       <div className={styles.infos}>
         <Icons />
         <Profile />
       </div>
-    )}
-    <div className={styles["triangle-bottom"]}>
-      <Triangle />
+      <div className={styles["triangle-bottom"]}>
+        <Triangle />
+      </div>
     </div>
-  </div>
-);
+  );
+};

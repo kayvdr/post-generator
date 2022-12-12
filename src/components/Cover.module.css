@@ -10,6 +10,15 @@
   position: relative;
   overflow: hidden;
   font-size: 1.5em;
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  cursor: move;
+}
+.post:hover,
+.post:active {
+  cursor: move;
 }
 
 .post-full {

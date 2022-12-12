@@ -247,11 +247,6 @@ export const Settings: FC<Props> = ({ elRef }) => {
               </>
             )}
             <Checkbox
-              label="Show Bar"
-              value={state.showBar}
-              setValue={(value) => setState({ ...state, showBar: value })}
-            />
-            <Checkbox
               label="Show Arrow"
               value={state.showArrow}
               setValue={(value) => setState({ ...state, showArrow: value })}

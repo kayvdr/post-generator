@@ -5,9 +5,20 @@ interface Statistic {
   downloads?: string | undefined;
 }
 
+export interface StateContext {
+  state: State;
+  setState: (value: State) => void;
+}
+
 export interface State {
   scale: number;
   size: boolean;
+  position: {
+    initX: number | null;
+    initY: number | null;
+    x: number;
+    y: number;
+  };
   template: string;
   title?: string | undefined;
   titleGreen?: string | undefined;
@@ -22,7 +33,6 @@ export interface State {
   imageWidth?: number;
   imagePositionTop?: number | undefined;
   imagePositionLeft?: number | undefined;
-  showBar: boolean;
   showArrow: boolean;
   statistic?: Statistic | undefined;
 }
