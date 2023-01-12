@@ -1,6 +1,6 @@
 import classnames from "classnames";
 import html2canvas from "html2canvas";
-import React, { FC, RefObject, useContext, useEffect, useState } from "react";
+import React, { FC, RefObject, useContext, useState } from "react";
 import { State } from "../types/types";
 import { StoreContext } from "./App";
 import { Checkbox } from "./Checkbox";
@@ -43,23 +43,9 @@ const downloadImage = (blob: string, fileName: string) => {
   fakeLink.remove();
 };
 
-let prevHeight = document.documentElement.clientHeight;
-
 export const Settings: FC<Props> = ({ elRef }) => {
   const store = useContext(StoreContext);
   const [open, setOpen] = useState(false);
-
-  useEffect(() => {
-    const updateSize = () => {
-      if (prevHeight !== document.documentElement.clientHeight) return;
-      const mobile = document.documentElement.clientWidth >= 768;
-      setOpen(mobile);
-      prevHeight = document.documentElement.clientHeight;
-    };
-    window.addEventListener("resize", updateSize);
-    updateSize();
-    return () => window.removeEventListener("resize", updateSize);
-  }, []);
 
   if (!store) return null;
 
