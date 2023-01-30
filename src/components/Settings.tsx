@@ -45,7 +45,9 @@ const downloadImage = (blob: string, fileName: string) => {
 
 export const Settings: FC<Props> = ({ elRef }) => {
   const store = useContext(StoreContext);
-  const [open, setOpen] = useState(false);
+  const [open, setOpen] = useState(
+    document.body.clientWidth > 768 ? true : false
+  );
 
   if (!store) return null;
 
